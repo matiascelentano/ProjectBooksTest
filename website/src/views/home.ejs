@@ -4,8 +4,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-
+    <header>
+        <!-- Logo -->
+        <figure>
+            <img src="/imgs/logos/logo.png" alt="" id="logo">
+        </figure>
+        <!-- Links -->
+        <ul>
+            <li>test 1</li>
+            <li>test 2</li>
+            <li>test 3</li>
+        </ul>
+    </header>
+    <main>
+        <!--Seccion Principal-->
+        <section>
+            <h2>
+                Libros
+            </h2>
+            <section class="article-container">
+                <!--Output de libros en la DB-->
+                <% libros.forEach(element =>{%>
+                    <article class="box-container">
+                        <h3><%=element.name%></h3>
+                        <p><%= element.id %> </p>
+                        <p class="rating"><%=element.rating%></p>
+                        <p class="info"><%=element.info%></p>
+                    </article>
+                <% }) %>
+            </section>
+        </section>
+    </main>
 </body>
 </html>
