@@ -2,9 +2,8 @@ const db = require('../database/models')
 const mainController = {
     index: async (req, res)=>{
         try {
-            let books = await db.Book.findAll();
-            console.log(books);
-            res.render('home')
+            let libros = await db.Book.findAll();
+            res.render('home', {libros});
         } catch (error) {
             throw error
         };
